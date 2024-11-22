@@ -1,0 +1,29 @@
+research_task:
+  description: >
+    Conduct a thorough investigation into {topic} using Google's Knowledge Graph as the primary source 
+    of structured data. If no Knowledge Graph information is available, adapt by utilizing the provided general Google search tool to search 
+    general Google results and use the scrape tool to scrape the top 2 positional URLs from the organic search results for relevant web content.
+    Prioritize accuracy, relevance, and clarity in presenting your findings.
+  expected_output: >
+    A detailed and accurate research report summarizing structured Knowledge Graph data 
+    (if available). If not, provide insights gathered from general search, 
+    ensuring all information is relevant to {topic}. If general search is not authorized,
+    or no information is obtained just report that.
+  agent: researcher
+
+reporting_task:
+  description: >
+    If any report is generated, review the detailed research report about {topic} and turn it into a well-structured and concise report.
+    Ensure the report is concise, clear, and contains all relevant information to build a profile about {topic}
+  expected_output: >
+    If there is any knowledge graph or general search report, provide a comprehensive profile of {topic}. Ensure the report is structured around key information and detailed enough to provide sufficient information about the topic. The report should include, but is not limited to, the following sections:
+    - Basic Information: Name, type (person, entity, organization), and relevant categories or industries.
+    - Background: Historical context, origin, or founding details.
+    - Key Figures: Important individuals associated with the topic, such as founders, key executives, or notable persons, along with brief bios.
+    - Location: Headquarters or main location, if applicable.
+    - Financial Information: Relevant financial data such as stock information, funding, or economic impact, if applicable.
+    - Contact Information: Customer service details, official contact links, or other relevant contact information.
+    - Online Presence: Official website link, social media profiles, and other online resources.
+    - Additional Relevant Information: Any other pertinent details that provide a comprehensive understanding of the topic.
+    If no report is generated, just report that.
+  agent: reporter
